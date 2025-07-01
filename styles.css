@@ -1,0 +1,234 @@
+/* * CSS Reset and Basic Styles 
+         */
+        :root {
+            --primary-green: #2ECC71;
+            --dark-green: #27AE60;
+            --white: #ffffff;
+            --light-text: #f0f0f0;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* Background image of a supermarket */
+            background-image: url('https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?q=80&w=2574&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Keeps the background static on scroll */
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* * Main Container with Glassmorphism Effect
+         */
+        .container {
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            padding: 80px 20px 40px 20px; /* Increased top padding for logo space */
+            /* Glassmorphism effect */
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(10px) saturate(180%);
+            -webkit-backdrop-filter: blur(10px) saturate(180%);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            box-shadow: 0 8px 32px 0 var(--shadow-color);
+        }
+
+        /* * Logo Placeholder
+         */
+        .logo-placeholder {
+            width: 120px;
+            height: 120px;
+            background-color: var(--white);
+            border-radius: 50%;
+            position: absolute;
+            top: -60px; /* Pulls the circle half way up */
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 4px solid rgba(255, 255, 255, 0.18);
+            /* This is where your logo image would go. 
+               For now, it's an empty white circle. */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px var(--shadow-color);
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            color: var(--light-text);
+            text-shadow: 1px 1px 3px var(--shadow-color);
+        }
+
+        /* * Buttons and Actions
+         */
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex; /* Use flex to align icon and text */
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Space between icon and text */
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn .fa-brands {
+            font-size: 1.25rem; /* Adjust icon size */
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--dark-green);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* * Footer Styling
+         */
+        footer {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: var(--light-text);
+            text-shadow: 1px 1px 3px var(--shadow-color);
+        }
+
+        footer a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animación para el texto destacado "solo lugar." */
+        .modern-highlight {
+            background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+            color: #fff;
+            padding: 0.2em 0.6em;
+            border-radius: 1em;
+            font-weight: 700;
+            font-size: 1.2em;
+            font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+            box-shadow: 0 4px 24px 0 rgba(67, 233, 123, 0.15);
+            display: inline-block;
+            animation: fontChange 2.5s infinite alternate;
+            transition: background 0.4s, color 0.4s;
+        }
+
+        @keyframes fontChange {
+            0% {
+                font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+                letter-spacing: 0.5px;
+                font-size: 1.2em;
+            }
+            15% {
+                font-family: 'Pacifico', cursive;
+                letter-spacing: 1px;
+                font-size: 1.3em;
+            }
+            30% {
+                font-family: 'Indie Flower', cursive;
+                letter-spacing: 2px;
+                font-size: 1.35em;
+            }
+            45% {
+                font-family: 'Permanent Marker', cursive;
+                letter-spacing: 1.5px;
+                font-size: 1.3em;
+            }
+            60% {
+                font-family: 'Roboto', Arial, sans-serif;
+                letter-spacing: 0.5px;
+                font-size: 1.2em;
+            }
+            75% {
+                font-family: 'Playfair Display', serif;
+                letter-spacing: 1px;
+                font-size: 1.25em;
+            }
+            90% {
+                font-family: 'Montserrat', Arial, sans-serif;
+                letter-spacing: 0.5px;
+                font-size: 1.2em;
+            }
+            100% {
+                font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+                letter-spacing: 0.5px;
+                font-size: 1.2em;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 600px) {
+            .actions {
+                flex-direction: row;
+                justify-content: center;
+            }
+            h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .logo-placeholder {
+                width: 100px;
+                height: 100px;
+                top: -50px;
+            }
+            .container {
+                padding-top: 60px;
+            }
+        }
