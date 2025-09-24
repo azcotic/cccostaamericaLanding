@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const swiper = new Swiper('.swiper-container', {
             loop: true,
             autoplay: {
-                delay: 2500,
+                delay: 30000,
                 disableOnInteraction: false,
             },
             pagination: {

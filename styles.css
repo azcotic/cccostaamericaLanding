@@ -281,16 +281,25 @@
 
 .swiper-container {
     width: 100%;
-    height: 400px;
+    max-width: 70%;
+    aspect-ratio: 1 / 1.3;
     margin-bottom: 2em;
-    overflow: hidden; /* Asegura que solo se vea un slide a la vez */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.10);
+    border-radius: 16px;
+    place-self: anchor-center;
 }
 
 .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.10);
 }
 
 .swiper-button-next, .swiper-button-prev {
@@ -299,4 +308,19 @@
 
 .swiper-pagination-bullet-active {
     background: var(--primary-green);
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 0.5em;
+        max-width: 98vw;
+    }
+    .swiper-container {
+        max-width: 98vw;
+        aspect-ratio: 1 / 1.3;
+        min-height: 60vw;
+    }
+    .swiper-slide img {
+        border-radius: 10px;
+    }
 }
